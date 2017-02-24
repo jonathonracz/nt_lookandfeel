@@ -1,4 +1,4 @@
-#include "JonLookAndFeel.h"
+#include "NTLookAndFeel.h"
 
 #include "Windows.h"
 
@@ -33,7 +33,7 @@ static Font toJuceFont(const LOGFONT& font)
     return Font(font.lfFaceName, fontPixelHeight, flags);
 }
 
-Font JonLookAndFeel::getSystemFont()
+Font NTLookAndFeel::getSystemFont()
 {
     NONCLIENTMETRICS metrics;
     if (!getMetrics(metrics))

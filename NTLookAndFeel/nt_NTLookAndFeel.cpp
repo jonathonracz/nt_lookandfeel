@@ -1,4 +1,4 @@
-#include "JonLookAndFeel.h"
+#include "NTLookAndFeel.h"
 
 static String getDefaultTheme()
 {
@@ -19,14 +19,14 @@ static String getDefaultTheme()
     )";
 }
 
-JonLookAndFeel::JonLookAndFeel()
+NTLookAndFeel::NTLookAndFeel()
 {
     setUsingNativeAlertWindows(true);
     setDefaultSansSerifTypefaceName(getSystemFont().getTypefaceName());
     setThemeFromContents(getDefaultTheme());
 }
 
-bool JonLookAndFeel::loadTheme(File themeFile)
+bool NTLookAndFeel::loadTheme(File themeFile)
 {
     if (!themeFile.existsAsFile())
         return false;
@@ -35,7 +35,7 @@ bool JonLookAndFeel::loadTheme(File themeFile)
     return true;
 }
 
-void JonLookAndFeel::setThemeFromContents(String contents)
+void NTLookAndFeel::setThemeFromContents(String contents)
 {
     var json;
     Result res = JSON::parse(contents, json);
@@ -74,7 +74,7 @@ void JonLookAndFeel::setThemeFromContents(String contents)
     }
 }
 
-void JonLookAndFeel::drawButtonBackground(Graphics& g, Button& button,
+void NTLookAndFeel::drawButtonBackground(Graphics& g, Button& button,
     const Colour& backgroundColour, bool isMouseOverButton, bool isButtonDown)
 {
     bool connL = button.isConnectedOnLeft();
@@ -108,7 +108,7 @@ void JonLookAndFeel::drawButtonBackground(Graphics& g, Button& button,
     g.strokePath(outline, PathStrokeType(1.0f));
 }
 
-void JonLookAndFeel::drawButtonText(Graphics& g, TextButton& button,
+void NTLookAndFeel::drawButtonText(Graphics& g, TextButton& button,
     bool isMouseOverButton, bool isButtonDown)
 {
     g.setColour(button.findColour(enabledText).withMultipliedAlpha(button.isEnabled() ? 1.0f : 0.5f));

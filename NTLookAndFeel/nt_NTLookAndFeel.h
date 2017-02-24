@@ -2,12 +2,12 @@
 
 #include <JuceHeader.h>
 
-class JonLookAndFeel :
+class NTLookAndFeel :
     public LookAndFeel_V3
 {
 public:
-    JonLookAndFeel();
-    ~JonLookAndFeel() {}
+    NTLookAndFeel();
+    ~NTLookAndFeel() {}
 
     enum MetaColorIds
     {

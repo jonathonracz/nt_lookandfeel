@@ -22,23 +22,12 @@
     SOFTWARE.
 */
 
-/*
-    BEGIN_JUCE_MODULE_DECLARATION
+#include "nt_lookandfeel.h"
 
-    ID:             jon_lookandfeel
-    vendor:         Jonathon Racz
-    version:        1.0.0
-    name:           Jon's LookAndFeel
-    description:    A general-purpose JUCE LookAndFeel inspired by modern multimedia applications.
-    website:        https://github.com/jonathonracz/jon_lookandfeel
-    license:        MIT
-    dependencies:   juce_gui_extra
+#include "NTLookAndFeel/NTLookAndFeel.cpp"
 
-    END_JUCE_MODULE_DECLARATION
-*/
-
-#pragma once
-
-#include <juce_gui_extra/juce_gui_extra.h>
-
-#include "JonLookAndFeel/JonLookAndFeel.h"
+#if JUCE_WINDOWS
+#include "NTLookAndFeel/NTLookAndFeel_Windows.cpp"
+#elif JUCE_MAC
+#include "NTLookAndFeel/NTLookAndFeel_OSX.mm"
+#endif
