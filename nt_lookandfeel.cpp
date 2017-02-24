@@ -24,10 +24,14 @@
 
 #include "nt_lookandfeel.h"
 
-#include "NTLookAndFeel/NTLookAndFeel.cpp"
+#include "lookandfeel/nt_NTLookAndFeel.cpp"
 
 #if JUCE_WINDOWS
-#include "NTLookAndFeel/NTLookAndFeel_Windows.cpp"
+#include "lookandfeel/nt_NTLookAndFeel_Windows.cpp"
 #elif JUCE_MAC
-#include "NTLookAndFeel/NTLookAndFeel_OSX.mm"
+#include "lookandfeel/nt_NTLookAndFeel_OSX.mm"
+#elif JUCE_IOS
+#include "lookandfeel/nt_NTLookAndFeel_iOS.mm"
+#else
+#include "lookandfeel/nt_NTLookAndFeel_Fallback.cpp"
 #endif

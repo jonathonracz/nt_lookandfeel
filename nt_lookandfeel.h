@@ -33,6 +33,8 @@
     website:        https://github.com/jonathonracz/nt_lookandfeel
     license:        MIT
     dependencies:   juce_gui_extra
+    OSXFrameworks:  AppKit
+    iOSFrameworks:  UIKit
 
     END_JUCE_MODULE_DECLARATION
 */
@@ -41,4 +43,4 @@
 
 #include <juce_gui_extra/juce_gui_extra.h>
 
-#include "NTLookAndFeel/NTLookAndFeel.h"
+#include "lookandfeel/nt_NTLookAndFeel.h"

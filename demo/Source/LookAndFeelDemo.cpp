@@ -30,7 +30,7 @@
 LookAndFeelDemo::LookAndFeelDemo ()
 {
     //[Constructor_pre] You can add your own custom stuff here..
-    lookAndFeel = std::unique_ptr<NTLookAndFeel>(new NTLookAndFeel);
+    lookAndFeel = std::unique_ptr<ntwelve::NTLookAndFeel>(new ntwelve::NTLookAndFeel);
     LookAndFeel::setDefaultLookAndFeel(lookAndFeel.get());
     //[/Constructor_pre]
 
@@ -149,7 +149,7 @@ void LookAndFeelDemo::paint (Graphics& g)
     g.fillAll (Colours::white);
 
     //[UserPaint] Add your own custom painting code here..
-    g.fillAll(findColour(NTLookAndFeel::MetaColorIds::foreground));
+    g.fillAll(findColour(ntwelve::NTLookAndFeel::MetaColorIds::foreground));
     //[/UserPaint]
 }
 

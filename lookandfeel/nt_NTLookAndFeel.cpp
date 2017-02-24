@@ -1,4 +1,6 @@
-#include "NTLookAndFeel.h"
+namespace ntwelve
+{
+using namespace juce;
 
 static String getDefaultTheme()
 {
@@ -74,6 +76,12 @@ void NTLookAndFeel::setThemeFromContents(String contents)
     }
 }
 
+float NTLookAndFeel::toPixelHeight(float pointHeight)
+{
+    Desktop::Displays::Display main = Desktop::getInstance().getDisplays().getMainDisplay();
+    return (pointHeight * (main.dpi / main.scale)) / 72;
+}
+
 void NTLookAndFeel::drawButtonBackground(Graphics& g, Button& button,
     const Colour& backgroundColour, bool isMouseOverButton, bool isButtonDown)
 {
@@ -125,4 +133,6 @@ void NTLookAndFeel::drawButtonText(Graphics& g, TextButton& button,
         g.drawFittedText(button.getButtonText(),
             leftIndent, yIndent, textWidth, button.getHeight() - yIndent * 2,
             Justification::horizontallyCentred, 2);
+}
+
 }

@@ -1,6 +1,8 @@
-#include "NTLookAndFeel.h"
-
 #include "Windows.h"
+
+namespace ntwelve
+{
+using namespace juce;
 
 static bool getMetrics(NONCLIENTMETRICS& metrics)
 {
@@ -40,4 +42,15 @@ Font NTLookAndFeel::getSystemFont()
         return Font();
 
     return toJuceFont(metrics.lfCaptionFont);
+}
+
+Font NTLookAndFeel::getSmallSystemFont()
+{
+    NONCLIENTMETRICS metrics;
+    if (!getMetrics(metrics))
+        return Font();
+
+    return toJuceFont(metrics.lfSmCaptionFont);
+}
+
 }
